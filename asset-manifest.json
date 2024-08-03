@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.fe927caf.css",
+    "main.js": "/static/js/main.24bb9edb.js",
+    "static/js/787.4b24f717.chunk.js": "/static/js/787.4b24f717.chunk.js",
+    "static/media/background.jpg": "/static/media/background.f2566d3ec9f6ba7e176c.jpg",
+    "static/media/Photography.jpg": "/static/media/Photography.927c90351b65646c8f36.jpg",
+    "static/media/quera-library.jpg": "/static/media/quera-library.7266b7f4d0444a7ecbb9.jpg",
+    "static/media/FLA-Teaching.jpg": "/static/media/FLA-Teaching.ba07845a3b51e57f4072.jpg",
+    "static/media/CV.pdf": "/static/media/CV.68f5fe3bee49308c3aaf.pdf",
+    "static/media/parsa.jpeg": "/static/media/parsa.09b460b255c408910b7f.jpeg",
+    "static/media/sbu-logo.png": "/static/media/sbu-logo.1ca0c136a75c9bd24e3a.png",
+    "index.html": "/index.html",
+    "main.fe927caf.css.map": "/static/css/main.fe927caf.css.map",
+    "main.24bb9edb.js.map": "/static/js/main.24bb9edb.js.map",
+    "787.4b24f717.chunk.js.map": "/static/js/787.4b24f717.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fe927caf.css",
+    "static/js/main.24bb9edb.js"
+  ]
+}
