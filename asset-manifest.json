@@ -1,10 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.fe927caf.css",
-    "main.js": "/static/js/main.7557e374.js",
+    "main.js": "/static/js/main.0b703180.js",
     "static/js/787.4b24f717.chunk.js": "/static/js/787.4b24f717.chunk.js",
     "static/media/background-desktop.jpg": "/static/media/background-desktop.a2338cfc87ba55269585.jpg",
-    "static/media/background-mobile.jpg": "/static/media/background-mobile.1da4294902e3fe1e4df0.jpg",
     "static/media/Photography.jpg": "/static/media/Photography.927c90351b65646c8f36.jpg",
     "static/media/quera-library.jpg": "/static/media/quera-library.7266b7f4d0444a7ecbb9.jpg",
     "static/media/FLA-Teaching.jpg": "/static/media/FLA-Teaching.ba07845a3b51e57f4072.jpg",
@@ -14,11 +13,11 @@
     "static/media/sbu-logo.png": "/static/media/sbu-logo.1ca0c136a75c9bd24e3a.png",
     "index.html": "/index.html",
     "main.fe927caf.css.map": "/static/css/main.fe927caf.css.map",
-    "main.7557e374.js.map": "/static/js/main.7557e374.js.map",
+    "main.0b703180.js.map": "/static/js/main.0b703180.js.map",
     "787.4b24f717.chunk.js.map": "/static/js/787.4b24f717.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fe927caf.css",
-    "static/js/main.7557e374.js"
+    "static/js/main.0b703180.js"
   ]
 }
