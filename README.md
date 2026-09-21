@@ -1,32 +1,28 @@
-# React + TypeScript + Vite
+# parsanoori.github.io
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Personal portfolio. Vite + React + TypeScript + Tailwind CSS, deployed to GitHub Pages via GitHub Actions.
 
-Currently, two official plugins are available:
+## Development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Content
+
+All editable content lives in `src/data/*.ts` — no need to touch component code to update skills, timeline entries, courses, projects, or the life-philosophy flowchart.
+
+## Before going live
+
+1. **Contact form**: create a free form at [formspree.io](https://formspree.io) and replace the endpoint in `src/components/sections/Contact.tsx` (`FORMSPREE_ENDPOINT`).
+2. **GitHub Pages source**: in the repo's Settings → Pages, set Source to "GitHub Actions" (one-time).
+3. Push to `main` — the workflow in `.github/workflows/deploy.yml` builds and deploys automatically.
+
+## Stack
+
+- Vite + React + TypeScript
+- Tailwind CSS v4 (dark theme, electric-blue accent)
+- Framer Motion for scroll/entrance animations
+- React Flow (`@xyflow/react`) for the animated life-philosophy diagram
+- react-icons for social/tech icons
