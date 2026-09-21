@@ -1,6 +1,13 @@
 import { useMemo } from 'react'
 import { motion } from 'framer-motion'
-import { ReactFlow, Background, BackgroundVariant, type Node, type Edge } from '@xyflow/react'
+import {
+  ReactFlow,
+  Background,
+  BackgroundVariant,
+  MarkerType,
+  type Node,
+  type Edge,
+} from '@xyflow/react'
 import '@xyflow/react/dist/style.css'
 import { flowNodes, flowEdges } from '../../data/flowchart'
 import { StartNode, DecisionNode, ActionNode } from './nodes'
@@ -22,24 +29,33 @@ export default function LifeFlowchart() {
 
   const edges: Edge[] = useMemo(
     () =>
-      flowEdges.map((e) => ({
-        id: e.id,
-        source: e.source,
-        target: e.target,
-        sourceHandle: e.loop ? 'loop-out' : undefined,
-        targetHandle: e.loop ? 'loop-in' : undefined,
-        label: e.label,
-        type: 'smoothstep',
-        animated: true,
-        pathOptions: e.loop ? { borderRadius: 16 } : undefined,
-        style: {
-          stroke: e.loop ? '#c084fc' : '#60a5fa',
-          strokeWidth: 2,
-          strokeDasharray: e.loop ? '6 4' : undefined,
-        },
-        labelStyle: { fill: '#e2e8f0', fontSize: 11, fontWeight: 600 },
-        labelBgStyle: { fill: '#0d1220', fillOpacity: 0.85 },
-      })),
+      flowEdges.map((e) => {
+        const color = e.loop ? '#c084fc' : '#60a5fa'
+        return {
+          id: e.id,
+          source: e.source,
+          target: e.target,
+          sourceHandle: e.loop ? 'loop-out' : undefined,
+          targetHandle: e.loop ? 'loop-in' : undefined,
+          label: e.label,
+          type: 'smoothstep',
+          animated: true,
+          pathOptions: e.loop ? { borderRadius: 16 } : undefined,
+          // A plain dashed line's moving dash pattern can show a gap right at
+          // the node border depending on animation phase, making the
+          // connection look detached even though it's geometrically flush.
+          // A solid arrowhead marker anchors the endpoint visually regardless
+          // of that phase.
+          markerEnd: { type: MarkerType.ArrowClosed, color, width: 16, height: 16 },
+          style: {
+            stroke: color,
+            strokeWidth: 2,
+            strokeDasharray: e.loop ? '6 4' : undefined,
+          },
+          labelStyle: { fill: '#e2e8f0', fontSize: 11, fontWeight: 600 },
+          labelBgStyle: { fill: '#0d1220', fillOpacity: 0.85 },
+        }
+      }),
     [],
   )
 
