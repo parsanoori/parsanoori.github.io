@@ -2,7 +2,25 @@ import { memo } from 'react'
 import { Handle, Position, type NodeProps } from '@xyflow/react'
 import { motion } from 'framer-motion'
 
-type FlowNodeData = { label: string; index: number }
+type FlowNodeData = {
+  label: string
+  index: number
+  extraHandle?: { type: 'source' | 'target'; position: 'left' | 'right'; id: string }
+}
+
+const extraHandlePosition = { left: Position.Left, right: Position.Right }
+
+function ExtraHandle({ extraHandle }: { extraHandle?: FlowNodeData['extraHandle'] }) {
+  if (!extraHandle) return null
+  return (
+    <Handle
+      type={extraHandle.type}
+      position={extraHandlePosition[extraHandle.position]}
+      id={extraHandle.id}
+      className="!bg-fuchsia-400"
+    />
+  )
+}
 
 const enter = (index: number) => ({
   initial: { opacity: 0, scale: 0.6 },
@@ -25,7 +43,7 @@ export const StartNode = memo(({ data }: NodeProps) => {
 })
 
 export const DecisionNode = memo(({ data }: NodeProps) => {
-  const { label, index } = data as unknown as FlowNodeData
+  const { label, index, extraHandle } = data as unknown as FlowNodeData
   return (
     <motion.div {...enter(index)} className="relative flex h-32 w-32 items-center justify-center">
       <Handle type="target" position={Position.Top} className="!bg-accent-light" />
@@ -34,12 +52,13 @@ export const DecisionNode = memo(({ data }: NodeProps) => {
         {label}
       </span>
       <Handle type="source" position={Position.Bottom} className="!bg-accent-light" />
+      <ExtraHandle extraHandle={extraHandle} />
     </motion.div>
   )
 })
 
 export const ActionNode = memo(({ data }: NodeProps) => {
-  const { label, index } = data as unknown as FlowNodeData
+  const { label, index, extraHandle } = data as unknown as FlowNodeData
   return (
     <motion.div
       {...enter(index)}
@@ -48,6 +67,7 @@ export const ActionNode = memo(({ data }: NodeProps) => {
       <Handle type="target" position={Position.Top} className="!bg-teal-300" />
       {label}
       <Handle type="source" position={Position.Bottom} className="!bg-teal-300" />
+      <ExtraHandle extraHandle={extraHandle} />
     </motion.div>
   )
 })

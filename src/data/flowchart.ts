@@ -6,6 +6,7 @@ export interface FlowNodeDef {
   label: string
   x: number
   y: number
+  extraHandle?: { type: 'source' | 'target'; position: 'left' | 'right'; id: string }
 }
 
 export interface FlowEdgeDef {
@@ -18,13 +19,27 @@ export interface FlowEdgeDef {
 
 export const flowNodes: FlowNodeDef[] = [
   { id: 'A', kind: 'start', label: 'Perceive life as it is', x: 320, y: 0 },
-  { id: 'B', kind: 'decision', label: 'Is it desirable?', x: 320, y: 140 },
+  {
+    id: 'B',
+    kind: 'decision',
+    label: 'Is it desirable?',
+    x: 320,
+    y: 140,
+    extraHandle: { type: 'target', position: 'left', id: 'loop-in' },
+  },
   { id: 'G', kind: 'action', label: 'Accept it', x: 600, y: 300 },
   { id: 'H', kind: 'action', label: 'Enjoy it', x: 600, y: 460 },
   { id: 'C', kind: 'decision', label: 'Can you do something about it?', x: 60, y: 300 },
   { id: 'D', kind: 'action', label: 'Accept it', x: 260, y: 480 },
   { id: 'E', kind: 'action', label: 'Take action', x: -180, y: 460 },
-  { id: 'F', kind: 'action', label: 'See the results', x: -180, y: 620 },
+  {
+    id: 'F',
+    kind: 'action',
+    label: 'See the results',
+    x: -180,
+    y: 620,
+    extraHandle: { type: 'source', position: 'left', id: 'loop-out' },
+  },
 ]
 
 export const flowEdges: FlowEdgeDef[] = [
