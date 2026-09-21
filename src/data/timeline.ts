@@ -1,3 +1,5 @@
+import { courses, type Course } from './courses'
+
 export interface TimelineEntry {
   id: string
   type: 'work' | 'education'
@@ -6,6 +8,7 @@ export interface TimelineEntry {
   date: string
   description: string
   skills: string[]
+  courses?: Course[]
 }
 
 export const timeline: TimelineEntry[] = [
@@ -57,6 +60,7 @@ export const timeline: TimelineEntry[] = [
       'Reinforcement learning',
       'Teaching / TA-ing',
     ],
+    courses,
   },
   {
     id: 'highschool',

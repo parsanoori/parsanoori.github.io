@@ -89,6 +89,37 @@ export default function Timeline() {
                           ))}
                         </div>
                       </div>
+
+                      {entry.courses && (
+                        <div className="mt-5">
+                          <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent-light">
+                            Highlight courses (TA'd)
+                          </p>
+                          <div className="grid gap-3 sm:grid-cols-2">
+                            {entry.courses.map((course) => (
+                              <div
+                                key={course.name}
+                                className="rounded-lg border border-border bg-surface-2 p-3"
+                              >
+                                <p className="text-sm font-medium text-text">{course.name}</p>
+                                {course.note && (
+                                  <p className="mt-0.5 text-xs text-text-muted">{course.note}</p>
+                                )}
+                                <div className="mt-2 flex flex-wrap gap-1.5">
+                                  {course.skills.map((skill) => (
+                                    <span
+                                      key={skill}
+                                      className="rounded-full border border-accent-dim/60 bg-accent/10 px-2.5 py-0.5 text-[11px] text-accent-light"
+                                    >
+                                      {skill}
+                                    </span>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
                     </motion.div>
                   )}
                 </AnimatePresence>
