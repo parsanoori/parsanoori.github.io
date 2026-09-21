@@ -32,11 +32,14 @@ export const flowNodes: FlowNodeDef[] = [
   { id: 'C', kind: 'decision', label: 'Can you do something about it?', x: 60, y: 300 },
   { id: 'D', kind: 'action', label: 'Accept it', x: 260, y: 480 },
   { id: 'E', kind: 'action', label: 'Take action', x: -180, y: 460 },
+  // Offset further left than E (not stacked directly under it) so the F->B
+  // loop edge below has a clear lane and doesn't need a huge routing offset
+  // to dodge E — that hack pushed the edge past the canvas's fitted view.
   {
     id: 'F',
     kind: 'action',
     label: 'See the results',
-    x: -180,
+    x: -360,
     y: 620,
     extraHandle: { type: 'source', position: 'left', id: 'loop-out' },
   },

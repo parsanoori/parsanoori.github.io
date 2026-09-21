@@ -42,13 +42,27 @@ export const StartNode = memo(({ data }: NodeProps) => {
   )
 })
 
+// A square of side S rotated 45° has its vertices at S/√2 from center, so the
+// wrapper must be S*√2 wide for Top/Bottom/Left/Right handles (placed at the
+// wrapper's edges) to land exactly on the diamond's tips instead of floating
+// inside its rotated silhouette.
+const DIAMOND_SIDE = 112
+const DIAMOND_BOUNDS = Math.round(DIAMOND_SIDE * Math.SQRT2)
+
 export const DecisionNode = memo(({ data }: NodeProps) => {
   const { label, index, extraHandle } = data as unknown as FlowNodeData
   return (
-    <motion.div {...enter(index)} className="relative flex h-32 w-32 items-center justify-center">
+    <motion.div
+      {...enter(index)}
+      className="relative flex items-center justify-center"
+      style={{ width: DIAMOND_BOUNDS, height: DIAMOND_BOUNDS }}
+    >
       <Handle type="target" position={Position.Top} className="!bg-accent-light" />
-      <div className="absolute inset-0 rotate-45 rounded-lg border-2 border-fuchsia-400/70 bg-fuchsia-500/10 shadow-[0_0_20px_rgba(217,70,239,0.2)]" />
-      <span className="relative z-10 px-4 text-center text-xs font-semibold text-text">
+      <div
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-lg border-2 border-fuchsia-400/70 bg-fuchsia-500/10 shadow-[0_0_20px_rgba(217,70,239,0.2)]"
+        style={{ width: DIAMOND_SIDE, height: DIAMOND_SIDE }}
+      />
+      <span className="relative z-10 px-6 text-center text-xs font-semibold text-text">
         {label}
       </span>
       <Handle type="source" position={Position.Bottom} className="!bg-accent-light" />
