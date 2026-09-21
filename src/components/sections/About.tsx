@@ -26,13 +26,10 @@ export default function About() {
           className="h-32 w-32 shrink-0 rounded-2xl border border-border object-cover sm:h-40 sm:w-40"
         />
         <p className="text-left leading-relaxed text-text-muted">
-          I'm a graduated student from Shahid Beheshti University, extremely interested in
-          blockchain, cryptocurrencies, and the philosophy behind them. As a liberalist, I
-          believe blockchain will give the world the opportunity to achieve the necessary
-          values. I've worked in the blockchain labs of our university and co-authored a paper
-          on the use of blockchain for privacy in VANET systems. I started learning about
-          Bitcoin and other cryptocurrencies before beginning my undergraduate program, and
-          I've looked forward to taking related courses throughout my university years.
+          I'm a Software Developer with recent works on fintech projects. I have recently focused on
+          developing Stellar Blockchain and contributing to Iran's CBCD project. I have proven skill
+          in Golang, Python and C++. Interested in learning new things, travelling and meeting new
+          people.
         </p>
       </motion.div>
     </section>
