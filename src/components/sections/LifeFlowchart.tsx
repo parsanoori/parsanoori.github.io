@@ -17,11 +17,11 @@ const nodeTypes = { start: StartNode, decision: DecisionNode, action: ActionNode
 export default function LifeFlowchart() {
   const nodes: Node[] = useMemo(
     () =>
-      flowNodes.map((n, index) => ({
+      flowNodes.map((n) => ({
         id: n.id,
         type: n.kind,
         position: { x: n.x, y: n.y },
-        data: { label: n.label, index, extraHandle: n.extraHandle },
+        data: { label: n.label, extraHandle: n.extraHandle },
         draggable: true,
       })),
     [],
