@@ -26,10 +26,13 @@ export default function About() {
           className="h-32 w-32 shrink-0 rounded-2xl border border-border object-cover sm:h-40 sm:w-40"
         />
         <p className="text-left leading-relaxed text-text-muted">
-          I'm a Software Developer with recent works on fintech projects. I have recently focused on
-          developing Stellar Blockchain and contributing to Iran's CBCD project. I have proven skill
-          in Golang, Python and C++. Interested in learning new things, travelling and meeting new
-          people.
+          I'm a Software Developer with recent works on financial technologies projects. I have recently
+          focused on developing Stellar Blockchain and contributing to Iran's CBCD project. I have proven
+          skill in Golang, Python and C++.
+          In academy I love to study on distributed systems and edge case software technologies. I'm into 
+          philosophy behind cryptocurrencies and sometimes daydream about other cases that the same methodology
+          can be applied.
+          I'm interested in learning new things, travelling and meeting new people.
         </p>
       </motion.div>
     </section>
