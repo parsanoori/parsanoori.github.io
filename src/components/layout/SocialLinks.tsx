@@ -1,10 +1,11 @@
-import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaInstagram, FaTelegram } from 'react-icons/fa'
 import { social } from '../../data/social'
 
 const links = [
   { href: social.github, label: 'GitHub', Icon: FaGithub },
   { href: social.linkedin, label: 'LinkedIn', Icon: FaLinkedin },
   { href: social.instagram, label: 'Instagram', Icon: FaInstagram },
+  { href: social.telegram, label: 'Telegram', Icon: FaTelegram },
 ]
 
 export default function SocialLinks({ className = '' }: { className?: string }) {
