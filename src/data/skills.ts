@@ -4,17 +4,12 @@ export interface Skill {
 }
 
 export const hardSkills: Skill[] = [
-  { name: 'Discrete Mathematics', value: 90 },
-  { name: 'Formal Languages', value: 90 },
   { name: 'Python', value: 85 },
-  { name: 'C++', value: 85 },
   { name: 'Golang', value: 85 },
-  { name: 'Data Structures', value: 85 },
-  { name: 'Solidity', value: 80 },
-  { name: 'Cryptocurrencies', value: 80 },
+  { name: 'C++', value: 75 },
   { name: 'SQL', value: 75 },
-  { name: 'Algorithms', value: 75 },
-  { name: 'Cryptography', value: 70 },
+  { name: 'Solidity', value: 40 },
+  { name: 'Rust', value: 40 },
 ]
 
 export const softSkills: Skill[] = [
