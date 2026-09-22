@@ -2,8 +2,7 @@ import { useState, type FormEvent } from 'react'
 import { motion } from 'framer-motion'
 import { social } from '../../data/social'
 
-// TODO: replace with your real Formspree form ID (create one free at https://formspree.io)
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/REPLACE_ME'
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xljdbabo'
 
 type Status = 'idle' | 'sending' | 'sent' | 'error'
 
